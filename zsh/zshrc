@@ -4,6 +4,13 @@
 # Initialize modules
 # ------------------
 
+# Set editor default keymap to emacs (`-e`) or vi (`-v`)
+bindkey -v
+bindkey '^v' edit-command-line
+bindkey -M viins "^e" end-of-line
+bindkey -M viins "^n" down-line-or-history
+bindkey -M viins "^p" up-line-or-history
+
 ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
