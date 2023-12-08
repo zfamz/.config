@@ -2,9 +2,7 @@
 
 export JOSHUTO_CONFIG_HOME=${MC_PATH}/joshuto
 function ra() {
-	ID="$$"
-	mkdir -p /tmp/$USER
-	OUTPUT_FILE="/tmp/$USER/joshuto-cwd-$ID"
+	OUTPUT_FILE="$HOME/.cache/joshuto-output-file"
 	env joshuto --output-file "$OUTPUT_FILE" $@
 	exit_code=$?
 
@@ -25,3 +23,4 @@ function ra() {
 			;;
 	esac
 }
+

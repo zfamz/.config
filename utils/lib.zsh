@@ -7,3 +7,11 @@ link_file() {
   }
   ln -s $(pwd)/$1 $name
 }
+
+link_dir() {
+  local target=$1
+  if [[ -e $target ]] {
+  	rm $target
+  }
+  ln -s $(pwd) $target
+}

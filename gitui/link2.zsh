@@ -1,7 +1,5 @@
 #!/bin/zsh
 
-local target=~/.config/gitui
-if [[ -e $target ]] {
-	rm $target
-}
-ln -s $(pwd) $target
+source ../utils/lib.zsh
+
+link_dir ~/.config/gitui
