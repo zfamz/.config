@@ -13,8 +13,9 @@ vim.keymap.set("n", "<leader>gG",
   function() Util.terminal({ "gitui" }, { esc_esc = false, ctrl_hjkl = false }) end,
   { desc = "gitui (cwd)" })
 
+-- add joshuto
 local joshuto_output_file = vim.fn.expand("$HOME/.cache/joshuto-output-file")
-local function on_exit(job_id, code)
+local function on_joshuto_exit(job_id, code)
   if code == 102 then
     local chosen_file = vim.fn.readfile(joshuto_output_file)[1]
     if chosen_file then
@@ -23,11 +24,10 @@ local function on_exit(job_id, code)
   end
 end
 
--- add joshuto
 vim.keymap.set("n", "<leader>e",
   function()
     Util.terminal({ "joshuto", "--file-chooser", "--output-file", joshuto_output_file },
-      { on_exit = on_exit, cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
+      { on_exit = on_joshuto_exit, cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
   end,
   { desc = "joshuto (root dir)" })
 vim.keymap.set("n", "<leader>E",
