@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-export JOSHUTO_CONFIG_HOME=${MC_PATH}/joshuto
+# export JOSHUTO_CONFIG_HOME=${MC_PATH}/joshuto
 function ra() {
 	OUTPUT_FILE="$HOME/.cache/joshuto-output-file"
 	env joshuto --output-file "$OUTPUT_FILE" $@
