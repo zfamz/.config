@@ -190,7 +190,7 @@ handle_mime() {
 		## Text
 	text/* | */xml)
 		bat --color=always --paging=never \
-			--style=plain \
+			--style=plain --tabs=1 \
 			--terminal-width="${PREVIEW_WIDTH}" \
 			"${FILE_PATH}" && exit 0
 		cat "${FILE_PATH}" && exit 0
