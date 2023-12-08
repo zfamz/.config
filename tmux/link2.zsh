@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-source ../utils/index.zsh
+source ../utils/lib.zsh
 
 link_file tmux.conf
 
