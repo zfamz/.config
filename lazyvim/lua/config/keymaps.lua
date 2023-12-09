@@ -33,6 +33,6 @@ vim.keymap.set("n", "<leader>e",
 vim.keymap.set("n", "<leader>E",
   function()
     Util.terminal({ "joshuto", "--file-chooser", "--output-file", joshuto_output_file },
-      { cwd = vim.fn.expand("#:p:h"), esc_esc = false, ctrl_hjkl = false })
+      { cwd = vim.fn.expand("%:p:h"), esc_esc = false, ctrl_hjkl = false })
   end,
   { desc = "joshuto (file)" })
