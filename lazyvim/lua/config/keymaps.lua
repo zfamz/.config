@@ -29,10 +29,10 @@ vim.keymap.set("n", "<leader>e",
     Util.terminal({ "joshuto", "--file-chooser", "--output-file", joshuto_output_file },
       { on_exit = on_joshuto_exit, cwd = Util.root(), esc_esc = false, ctrl_hjkl = false })
   end,
-  { desc = "joshuto (root dir)" })
+  { desc = "joshuto" })
 vim.keymap.set("n", "<leader>E",
   function()
     Util.terminal({ "joshuto", "--file-chooser", "--output-file", joshuto_output_file },
-      { esc_esc = false, ctrl_hjkl = false })
+      { cwd = vim.fn.expand("#:p:h"), esc_esc = false, ctrl_hjkl = false })
   end,
-  { desc = "joshuto (cwd)" })
+  { desc = "joshuto (file)" })
