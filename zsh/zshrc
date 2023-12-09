@@ -29,3 +29,4 @@ source ${ZIM_HOME}/init.zsh
 if [[ -n $MC_PATH ]]; then
   source ${MC_PATH}/config.zsh
 fi
+
